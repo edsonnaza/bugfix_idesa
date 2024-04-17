@@ -50,7 +50,7 @@ $app->get('/desafio-uno', function (Request $request, Response $response, $args)
     }
 });
 
-// ruta para manejar el JSON correctamente
+// Ruta para lotes
 $app->get('/desafio-dos/{loteID}', function (Request $request, Response $response, $args) {
     $loteID = $args['loteID'];
     $result = DesafioDos::retriveLotes($loteID);
