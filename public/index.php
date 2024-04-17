@@ -12,7 +12,8 @@ require_once __DIR__ . '/../src/DesafioDos.php';
 $app = AppFactory::create();
 
 $app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("¡Hola, IDESA!");
+    $response->getBody()->write("");
+    include 'instruccion.php';
     return $response;
 });
 
