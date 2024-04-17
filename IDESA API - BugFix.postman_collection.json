@@ -1,0 +1,139 @@
+{
+	"info": {
+		"_postman_id": "68c473a9-df66-4ac2-866d-dd380488ffcf",
+		"name": "IDESA API - BugFix",
+		"description": "#### En esta libreria se encuentra para consumir la tarea 2:\n\n#### _**Tarea 2:**_**\n\nPara avanzar con tu proceso de Seleccion realiza los siguientes bugfix**\n\n### Desafio #1\n\n- Ejecuta el script DesafioUno.php\n- Realiza las correciones Necesarias en la funcion getClientDebt a fin del que el json que devuelva de la siguiente manera:\n    \n\n{ \"status\": true, \"message\": \"Tienes Lotes para cobrar\", \"data\": { \"total\": 570000, \"detail\": \\[ { \"id\": 6, \"lote\": \"00148\", \"precio\": 190000, \"clientID\": \"123456\", \"vencimiento\": \"2022-12-01\" }, { \"id\": 7, \"lote\": \"00148\", \"precio\": 190000, \"clientID\": \"123456\", \"vencimiento\": \"2023-01-01\" }, { \"id\": 8, \"lote\": \"00148\", \"precio\": 190000, \"clientID\": \"123456\", \"vencimiento\": \"2023-02-01\" } \\] } }\n\n### Desafio #2\n\n- Ejecuta el script DesafiaDos.php\n- Realiza las correciones Necesarias en la funcion retriveLotes y en la funcion getLotes a fin del que el json que devuelva de la siguiente manera:\n    \n\n\\[ { \"id\": 4, \"lote\": \"00148\", \"precio\": 130000, \"clientID\": 123456, \"vencimiento\": \"2022-10-01\" }, { \"id\": 5, \"lote\": \"00148\", \"precio\": 145000, \"clientID\": 123456, \"vencimiento\": null }, { \"id\": 6, \"lote\": \"00148\", \"precio\": 190000, \"clientID\": 123456, \"vencimiento\": \"2022-12-01\" }, { \"id\": 7, \"lote\": \"00148\", \"precio\": 190000, \"clientID\": 123456, \"vencimiento\": \"2023-01-01\" }, { \"id\": 8, \"lote\": \"00148\", \"precio\": 190000, \"clientID\": 123456, \"vencimiento\": \"2023-02-01\" } \\]\n\n### Desafio #3\n\n- Realiza un Servicio REST que retorne todos los lotes datos de un lote segun el id enviado como parametro, utilizando la base idesa.db del Archivo Database.php\n    \n\n## INSTRUCCIONES\n\n1. Para consumir se debe clonar el siguiente repositorio:  \n    [git@github.com](https://mailto:git@github.com):edsonnaza/bugfix_idesa.git\n2. Instalar las depencias con: composer install\n3. Ejecutar el comando: **php -S localhost:8181 -t public public/index.php**\n4. Si todo corre bien: get Desafio UNO y get Desafio Dos - LOTES, estan listos para realizar las peticiones al servidor.\n    \n\nEjoy!  \nIng. Edson Sanchez  \n[edsonnaza@gmail.com](https://mailto:edsonnaza@gmail.com)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7576949"
+	},
+	"item": [
+		{
+			"name": "get Desafio UNO",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Referer",
+						"value": "{{referer}}",
+						"type": "default"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8181/desafio-uno/123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"desafio-uno",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get Desafio DOS - LOTES",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Referer",
+						"value": "{{referer}}",
+						"type": "default"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8181/desafio-uno/123456",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8181",
+					"path": [
+						"desafio-uno",
+						"123456"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		},
+		{
+			"key": "referer",
+			"value": "127.0.0.1:8000",
+			"type": "default"
+		}
+	]
+}
